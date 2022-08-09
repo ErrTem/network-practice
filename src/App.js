@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import './App.css'
 import {
   BrowserRouter as Router,
@@ -16,16 +16,13 @@ import Profile from "./components/Profile/Profile";
 const App = (props) => {
   return (
     <Router>
-      <div className='app-wrapper'>
+      <div className='appWrapper'>
         <Header />
         <Navbar />
-        <div className='app-wrapper-content'>
-        <Routes>
-          <Route path='/' element={<Profile posts={props.state.posts} />}/>
-          <Route path="/dialogs/" element={<Dialogs dialogs={props.state.dialogs} messages={props.state.messages} />} />
-          {/* <Route path='/dialogs' element={<Dialogs {...props} />} />
-          <Route path='/profile' element={<Profile {...props}/>} /> */}
-          {/* <Route path='/dialogs' render={()=> <Dialogs dialogs={props.dialogs}} */}
+        <div className='appWrapperContent'>
+          <Routes>
+            <Route path='/profile' element={<Profile state={props.state.profilePage} />} />
+            <Route path="/dialogs" element={<Dialogs state={props.state.dialogsPage} />} />
           </Routes>
         </div>
       </div>
